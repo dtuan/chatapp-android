@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp">
+
+    <com.stfalcon.chatkit.utils.ShapeImageView
+        android:id="@id/messageUserAvatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="8dp" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@id/bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/message_incoming_bubble_margin_right"
+        android:layout_toRightOf="@id/messageUserAvatar"
+        app:flexWrap="wrap"
+        app:alignItems="stretch"
+        app:alignContent="stretch"
+        app:justifyContent="flex_end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorLink="#ff527da3"
+            android:autoLink="web"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/incomingMapView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            map:liteMode="true"
+            map:mapType="none" />
+
+        <com.google.android.youtube.player.YouTubeThumbnailView
+            android:id="@+id/youtubeThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/no_thumbnail"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"/>
+
+        <TextView
+            android:id="@id/messageTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_alignSelf="center"
+            android:layout_marginLeft="8dp"
+            android:layout_alignParentBottom="true" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</RelativeLayout>
